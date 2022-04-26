@@ -20,6 +20,5 @@ export function userReducer(state, action) {
     }
 }
 
-// 5. Export Context as default
-// 6. --> App.jsx
-export default AppContext;
+// 5. export default context
+export default UserContext;

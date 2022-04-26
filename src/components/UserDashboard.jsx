@@ -1,6 +1,6 @@
 // 10. import useConext, useState and Context to be used
 import React, { useContext, useState } from "react";
-import AppContext from "../conducers/userConDucer";
+import AppContext from "../conducers/00-index";
 
 function UserDashboard() {
     // 11. Set-Up useContext
