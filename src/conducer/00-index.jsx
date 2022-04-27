@@ -33,4 +33,6 @@ export function AppContextProvider({ children }) {
         </AppContext.Provider >
     );
 }
+
+// 7. Export AppContext as default
 export default AppContext;

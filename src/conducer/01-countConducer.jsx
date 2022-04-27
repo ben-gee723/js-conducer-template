@@ -9,7 +9,7 @@ export const defaultCount = {
     count: 0
 };
 
-// 4. Create the Reducer
+// 4. Create the ReducerFunction
 export function counterReducer(state, action) {
     console.log("state", state.count)
     switch (action.type) {
