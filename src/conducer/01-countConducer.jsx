@@ -4,18 +4,19 @@ import React, { createContext } from "react";
 // 2. Create Context (if required)
 const CounterContext = createContext();
 
-// 3. Create the initialState
-export const intialCount = {
+// 3. Create defaultState
+export const defaultCount = {
     count: 0
 };
 
 // 4. Create the Reducer
 export function counterReducer(state, action) {
+    console.log("state", state.count)
     switch (action.type) {
         case 'INCREASE':
-            return state = state + 1;
+            return { count: state.count += 1 };
         case 'DECREASE':
-            return state = state - 1;
+            return { count: state.count -= 1 };
         default:
             throw new Error();
     }

@@ -5,11 +5,14 @@ import React, { createContext } from "react";
 export const UserContext = createContext();
 
 // 3. Create the initialState
-export const initialUser = {
+const defaultState = {
     name: "Ben",
     email: "apples@gmail.com",
     isLogin: false
 };
+// 3.1 getItem
+const retrieveState = JSON.parse(localStorage.getItem("persistState"));
+export const initialUser = retrieveState ? retrieveState.userState : defaultState;
 
 // 4. Create the Reducer
 export function userReducer(state, action) {

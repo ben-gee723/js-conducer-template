@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import UserDashboard from './components/UserDashboard';
+import Counter from './components/Counter'
 
 
 // Import Styles
@@ -10,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Welcome!</h1>
-        <UserDashboard />
+        <Counter />
       </header>
     </div>
   )
