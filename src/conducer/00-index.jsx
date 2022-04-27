@@ -7,7 +7,7 @@ import { defaultCount, counterReducer } from './01-countConducer';
 // 2. Create Context for everything
 const AppContext = createContext();
 
-// 3.1 getItem
+// 3. getItem
 const retrieveState = JSON.parse(localStorage.getItem("persistState"));
 const intialCount = retrieveState ? retrieveState.counterState : defaultCount;
 const initialUser = retrieveState ? retrieveState.userState : defaultState;
@@ -21,12 +21,12 @@ export function AppContextProvider({ children }) {
     // 4. AppContext: Combine all needed variables
     const value = { userState, userDispatch, counterState, counterDispatch };
 
-    // 6. setItem
+    // 5. setItem
     useEffect(() => {
         localStorage.setItem("persistState", JSON.stringify(value))
     }, [value])
 
-    // 5. Nest children in Context.Provider
+    // 6. Nest children in Context.Provider
     return (
         < AppContext.Provider value={value} >
             {children}
