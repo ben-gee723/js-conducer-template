@@ -19,7 +19,6 @@ export function AppContextProvider({ children }) {
 
     // 4. AppContext: Combine all needed variables
     const value = { userState, userDispatch, counterState, counterDispatch };
-    counterState
 
     // 6. setItem
     const persistState = { userState, counterState };
