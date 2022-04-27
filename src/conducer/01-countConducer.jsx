@@ -14,9 +14,9 @@ export function counterReducer(state, action) {
     console.log("state", state.count)
     switch (action.type) {
         case 'INCREASE':
-            return { count: state.count += 1 };
+            return { count: state.count + 1 };
         case 'DECREASE':
-            return { count: state.count -= 1 };
+            return { count: state.count - 1 };
         default:
             throw new Error();
     }
