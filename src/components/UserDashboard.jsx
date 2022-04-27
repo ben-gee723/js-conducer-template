@@ -5,6 +5,7 @@ import AppContext from "../conducer/00-index";
 function UserDashboard() {
     // 11. Set-Up useContext
     const { userState, userDispatch } = useContext(AppContext);
+
     // 12. Set-up required useStates to edit information
     const [newData, setNewData] = useState(userState);
 
