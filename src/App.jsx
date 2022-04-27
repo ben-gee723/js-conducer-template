@@ -3,7 +3,7 @@ import UserDashboard from './components/UserDashboard';
 
 
 // Import Styles
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (
