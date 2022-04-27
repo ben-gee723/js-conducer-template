@@ -13,8 +13,6 @@ function UserDashboard() {
         setNewData(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
     };
 
-    // console.log(data ? data : "empty")
-
     return (
         <>
             <p>Hello World</p>

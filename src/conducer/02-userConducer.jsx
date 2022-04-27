@@ -5,7 +5,7 @@ import React, { createContext } from "react";
 export const UserContext = createContext();
 
 // 3. Create the initialState
-export const initialUser = {
+export const defaultState = {
     name: "Ben",
     email: "apples@gmail.com",
     isLogin: false

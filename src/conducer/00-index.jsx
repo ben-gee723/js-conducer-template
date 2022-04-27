@@ -1,31 +1,30 @@
 import React, { createContext, useReducer, useEffect } from "react";
 
 // 1. Import Reducers
-import { initialUser, userReducer } from './userConducer';
-import { intialCount, counterReducer } from './countConducer';
+import { defaultState, userReducer } from './02-userConducer';
+import { defaultCount, counterReducer } from './01-countConducer';
 
 // 2. Create Context for everything
 const AppContext = createContext();
 
+// 3.1 getItem
+const retrieveState = JSON.parse(localStorage.getItem("persistState"));
+const intialCount = retrieveState ? retrieveState.counterState : defaultCount;
+const initialUser = retrieveState ? retrieveState.userState : defaultState;
+
 export function AppContextProvider({ children }) {
-    // 7. getItem
-    const retrieveState = JSON.parse(localStorage.getItem("persistState"))
-    const user = retrieveState ? retrieveState.userState : initialUser;
-    const counter = retrieveState ? retrieveState.counterState : intialCount;
 
     // 3. Reducer set-ups
-    const [userState, userDispatch] = useReducer(userReducer, user);
-    const [counterState, counterDispatch] = useReducer(counterReducer, counter);
+    const [userState, userDispatch] = useReducer(userReducer, initialUser);
+    const [counterState, counterDispatch] = useReducer(counterReducer, intialCount);
 
     // 4. AppContext: Combine all needed variables
     const value = { userState, userDispatch, counterState, counterDispatch };
 
     // 6. setItem
-    const persistState = { userState, counterState };
     useEffect(() => {
-        localStorage.setItem("persistState", JSON.stringify(persistState))
-    }, [userState, counterState])
-
+        localStorage.setItem("persistState", JSON.stringify(value))
+    }, [value])
 
     // 5. Nest children in Context.Provider
     return (
